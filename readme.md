@@ -32,8 +32,8 @@ Python installer should have set.
 This project consists for the following files:
 
 entertainment.py - main Python script to run
-media.py - contains the class Movie that stores movie details
-tv_series.py - creates the HTML file for the website (Udacity supplied)
+media.py - populated class that contains movies to be displayed via the constructor
+tv_series.py - creates the HTML file for the website
 cinema.jpg-Image to style background
 tv_series.html - generated code comprising html, css and javascript
 

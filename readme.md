@@ -1,4 +1,4 @@
-#Movie TV-Series Trailer
+#Movie Trailer Website (part requirement of the Udacity Full Stack Web Developer Nanodegree.)
 
 
 `The Movie Trailer Website project is a server-side code that displays trailers of selected movies.` 
@@ -41,7 +41,14 @@ cinema.jpg-Image to style background
 2. Open entertainment.py and run with the assumption that you already have installed Python 2.x
 3. Your default browser should launch a new tab showing the TV shows trailer website
 
+
+##Copyright and License
+
+This is a project made by Jude B. Kuti as part requirement for the Udacity Full Stack Nanodegree.
+
 #Resources
+
+https://discussions.udacity.com/c/nd000-stage-3-create-a-movie-website
 https://www.python.org/dev/peps/pep-0257/#multi-line-docstrings
 http://pep8online.com/
 http://coreyschafer.com/

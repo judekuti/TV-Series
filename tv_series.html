@@ -1,0 +1,219 @@
+
+<head>
+    <meta charset="utf-8">
+    <title>TV Series</title>
+
+    <!-- Bootstrap 3 -->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <style type="text/css" media="screen">
+        body {
+            padding-top: 80px;
+            background: url(cinema.jpg);
+            background-size:contain;
+        }
+        #trailer .modal-dialog {
+            margin-top: 200px;
+            width: 640px;
+            height: 480px;
+        }
+        .hanging-close {
+            position: absolute;
+            top: -12px;
+            right: -12px;
+            z-index: 9001;
+        }
+        #trailer-video {
+            width: 100%;
+            height: 100%;
+        }
+        .movie-tile {
+            margin-bottom: 20px;
+            padding-top: 20px;
+        }
+        .movie-tile:hover {
+            background-color: rgba(180,180,180, 0.5);
+            cursor: pointer;
+        }
+        .scale-media {
+            padding-bottom: 56.25%;
+            position: relative;
+        }
+        .scale-media iframe {
+            border: none;
+            height: 100%;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 0;
+            background-color: white;
+        }
+    </style>
+    <script type="text/javascript" charset="utf-8">
+        // Pause the video when the modal is closed
+        $(document).on('click', '.hanging-close, .modal-backdrop, .modal', function (event) {
+            // Remove the src so the player itself gets removed, as this is the only
+            // reliable way to ensure the video stops playing in IE
+            $("#trailer-video-container").empty();
+        });
+        // Start playing the video whenever the trailer modal is opened
+        $(document).on('click', '.movie-tile', function (event) {
+            var trailerYouTubeId = $(this).attr('data-trailer-youtube-id')
+            var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId + '?autoplay=1&html5=1';
+            $("#trailer-video-container").empty().append($("<iframe></iframe>", {
+              'id': 'trailer-video',
+              'type': 'text-html',
+              'src': sourceUrl,
+              'frameborder': 0
+            }));
+        });
+        // Animate in the movies when the page loads
+        $(document).ready(function () {
+          $('.movie-tile').hide().first().show("fast", function showNext() {
+            $(this).next("div").show("fast", showNext);
+          });
+        });
+    </script>
+</head>
+
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <!-- Trailer Video Modal -->
+    <div class="modal" id="trailer">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <a href="#" class="hanging-close" data-dismiss="modal" aria-hidden="true">
+            <img src="https://lh5.ggpht.com/v4-628SilF0HtHuHdu5EzxD7WRqOrrTIDi_MhEG6_qkNtUK5Wg7KPkofp_VJoF7RS2LhxwEFCO1ICHZlc-o_=s0#w=24&h=24"/>
+          </a>
+          <div class="scale-media" id="trailer-video-container">
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Main Page Content -->
+    <div class="container">
+      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">A Collection of TV-Series Trailers</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      
+<div class="col-md-6 col-lg-4 movie-tile text-center"
+    data-trailer-youtube-id="N_f1v0Nx5Sw" data-toggle="modal" data-target="#trailer">
+    <img src="http://www.gstatic.com/tv/thumb/tvbanners/14387024/p14387024_b_v8_aa.jpg" width="220" height="352">
+    <h3 style="background-color: black; color:white;">Designated Survivor</h3>
+    <h5 style="color:white"> Action - Rated: PG 13/ Season II Episode 4 </h5>
+    <h6 style="text-align: justify;background-color:light-grey; color:black;">
+    <i>A lower-level cabinet member who unexpectedly     becomes president after a devastating attack     on Washington He will struggle to prevent the     country and his own family from falling into chaos,    as he is thrust into one of the most difficult     presidencies in history</i><h6>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center"
+    data-trailer-youtube-id="AhvszRrle5o" data-toggle="modal" data-target="#trailer">
+    <img src="http://www.gstatic.com/tv/thumb/tvbanners/12670025/p12670025_b_v8_aa.jpg" width="220" height="352">
+    <h3 style="background-color: black; color:white;">Wayward Pines</h3>
+    <h5 style="color:white"> Sci-Fi - Rated: PG/ Season II Episode 10 </h5>
+    <h6 style="text-align: justify;background-color:light-grey; color:black;">
+    <i>Each step closer to the truth takes Ethan    further from the life he knew, from the husband    and father he was, until he must face the terrifying    reality that he may never get out of Wayward Pines alive.</i><h6>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center"
+    data-trailer-youtube-id="1aYDopySWJQ" data-toggle="modal" data-target="#trailer">
+    <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BYWRjY2Y1OGQtZTRmYS00OTFmLTg0OTUtZWJiZmYwMDk2M2QzXkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_UY1200_CR93,0,630,1200_AL_.jpg" width="220" height="352">
+    <h3 style="background-color: black; color:white;">Banshee</h3>
+    <h5 style="color:white"> Action - Rated: R/ Season IV Episode 8 </h5>
+    <h6 style="text-align: justify;background-color:light-grey; color:black;">
+    <i>Set in the small town of Banshee in Pennsylvania    Amish country,the series' main character is an    enigmatic ex-con (Antony Starr), who assumes the    identity of Lucas Hood, the town's murdered sheriff,    to hide from powerful crime lord Rabbit (Ben Cross).</i><h6>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center"
+    data-trailer-youtube-id="U7elNhHwgBU" data-toggle="modal" data-target="#trailer">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:    ANd9GcSUoTHVtBd1HyofXuIFUyDTzTs_hoCpzfi2Ky7mWXWqTfUDW3G7cQ" width="220" height="352">
+    <h3 style="background-color: black; color:white;">Narcos</h3>
+    <h5 style="color:white"> Drama - Rated: PG-13/ Season III Episode 10 </h5>
+    <h6 style="text-align: justify;background-color:light-grey; color:black;">
+    <i>The Medellin cartel - the most violent, ruthless and wealthy     criminal organization in the history of modern crime.     And the one man who lorded over them all... Pablo Escobar. </i><h6>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center"
+    data-trailer-youtube-id="lmi5QbkhQ1Q" data-toggle="modal" data-target="#trailer">
+    <img src="http://legacy.shadowandact.com/wp-content/uploads/2016/05/empire-pos-3.jpg" width="220" height="352">
+    <h3 style="background-color: black; color:white;">Empire</h3>
+    <h5 style="color:white"> Musical - Rated: PG-13/ Season IV Episode 4 </h5>
+    <h6 style="text-align: justify;background-color:light-grey; color:black;">
+    <i>A sexy and powerful new drama about the head     of a music empire (Terrence Howard) whose three    sons and ex-wife all battle for his throne.</i><h6>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center"
+    data-trailer-youtube-id="T2snL9QUIZI" data-toggle="modal" data-target="#trailer">
+    <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTA3MTMyNzc5NTReQTJeQWpwZ15BbWU4MDY3Mjc0NjAy._V1_UY1200_CR89,0,630,1200_AL_.jpg" width="220" height="352">
+    <h3 style="background-color: black; color:white;">Star</h3>
+    <h5 style="color:white"> Musical - Rated: PG/ Season II Episdoe 4 </h5>
+    <h6 style="text-align: justify;background-color:light-grey; color:black;">
+    <i>Three talented singers, desperate for a new start    and with ambitions of stardom, navigate the cut-throat    music business on their road to success.</i><h6>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center"
+    data-trailer-youtube-id="YGr75NZ5y34" data-toggle="modal" data-target="#trailer">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQffLyLTEZwdua-twnX_0Jrb-JtCp8rghBkcDcTtSita-wBXXorug" width="220" height="352">
+    <h3 style="background-color: black; color:white;">The Americans</h3>
+    <h5 style="color:white"> Drama - Rated: R/ Season V Episode 13 </h5>
+    <h6 style="text-align: justify;background-color:light-grey; color:black;">
+    <i>It is a 1980s Cold War drama. The premise is that a group of     Soviet KGB officers have been trained to impersonate American citizens,    so that each one can become a sleeper agent, with a cover which may     even include an unwitting spouse and family.</i><h6>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center"
+    data-trailer-youtube-id="KTu8iDynwNc" data-toggle="modal" data-target="#trailer">
+    <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMjA3NzMyMzU1MV5BMl5BanBnXkFtZTcwNjc1ODUwMg@@._V1_UY1200_CR157,0,630,1200_AL_.jpg" width="220" height="352">
+    <h3 style="background-color: black; color:white;">Lost</h3>
+    <h5 style="color:white"> Sci-Fi - Rated: G/ Season VI Episode 18 </h5>
+    <h6 style="text-align: justify;background-color:light-grey; color:black;">
+    <i>The survivors of Oceanic Flight 815 were 1,000 miles off course     when they crashed on a lush, mysterious island.     Each person possesses a shocking secret,    but they've got nothing on the island itself, which harbors a monstrous    security system, a series of underground bunkers and a group of violent     survivalists hidden in the shadows.</i><h6>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center"
+    data-trailer-youtube-id="hX-z6-ApPhA" data-toggle="modal" data-target="#trailer">
+    <img src="http://www.gstatic.com/tv/thumb/tvbanners/7974316/p7974316_b_v8_ab.jpg" width="220" height="352">
+    <h3 style="background-color: black; color:white;">24</h3>
+    <h5 style="color:white"> Action - Rated: PG-13/ Season IX Episode 12 </h5>
+    <h6 style="text-align: justify;background-color:light-grey; color:black;">
+    <i>Counterterrorism agent Jack Bauer fights the bad guys of the world,    a day at a time. With each week's episode unfolding in real time,    Twenty Four covers a single day in the life of Bauer each season.     Jack deals with assassination attempts, nuclear attacks, bioterrorism,     torture, traitors, sleeper cells, other bad guys and the alarming     tendency for his romances to end badly -- very badly.</i><h6>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center"
+    data-trailer-youtube-id="mZwEBHc_PBw" data-toggle="modal" data-target="#trailer">
+    <img src="http://www.gstatic.com/tv/thumb/tvbanners/12900907/p12900907_b_v8_aa.jpg" width="220" height="352">
+    <h3 style="background-color: black; color:white;">Prison Break</h3>
+    <h5 style="color:white"> Action - Rated: PG/ Season V Episode 9 </h5>
+    <h6 style="text-align: justify;background-color:light-grey; color:black;">
+    <i>Michael Scofield is a desperate man in a desperate situation.     His brother, Lincoln Burrows, was convicted of a crime he didn't     commit and put on Death Row. Michael holds up a bank to get himself     incarcerated alongside his brother in Fox River State Penitentiary,    then sets in motion a series of elaborate plans to break Lincoln out     and prove his innocence. Once out of jail, their perils aren't over    the brothers must flee to escape recapture and battle an intricate    political conspiracy that puts everyone's life at risk.</i><h6>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center"
+    data-trailer-youtube-id="RbLK99ysvck" data-toggle="modal" data-target="#trailer">
+    <img src="http://www.gstatic.com/tv/thumb/tvbanners/12923357/p12923357_b_v8_aa.jpg" width="220" height="352">
+    <h3 style="background-color: black; color:white;">Tyrant</h3>
+    <h5 style="color:white"> Drama - Rated: PG-13/ Season III Episode 10 </h5>
+    <h6 style="text-align: justify;background-color:light-grey; color:black;">
+    <i>Bassam 'Barry' al-Fayeed, who has fully assimilated     to living in America, is the son of a Middle Eastern dictator.    Barry is a pediatrician in Los Angeles, but he and his family     return to his native country for his nephew's wedding.     It's his first visit in 20 years, but things don't go as planned.    When his father dies suddenly, Barry and his family are embroiled     in political upheaval and forced to stay in the country.     Barry is thrown back into the familial and national politics     of his youth, which he had escaped by self-imposed exile.</i><h6>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center"
+    data-trailer-youtube-id="iGp_N3Ir7Do" data-toggle="modal" data-target="#trailer">
+    <img src="http://www.gstatic.com/tv/thumb/tvbanners/14160794/p14160794_b_v8_aa.jpg" width="220" height="352">
+    <h3 style="background-color: black; color:white;">Game of Thrones</h3>
+    <h5 style="color:white"> Epic - Rated: NC-17/ Season VII Episode 7 </h5>
+    <h6 style="text-align: justify;background-color:light-grey; color:black;">
+    <i>George R.R. Martin's best-selling book series 'A Song of Ice and Fire'     is brought to the screen as HBO sinks its considerable storytelling    teeth into the medieval fantasy epic. It's the depiction of two powerful    families kings and queens, knights and renegades, liars and honest     men playing a deadly game for control of the Seven Kingdoms of Westeros,    and to sit atop the Iron Throne.</i><h6>
+</div>
+
+    </div>
+  </body>
+</html>
